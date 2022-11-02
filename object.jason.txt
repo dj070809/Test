@@ -1,0 +1,133 @@
+1)	Created a separate class for Json in eclipse in name of payload 1
+2)	package Files;
+3)	
+4)	public class Payload1
+5)	{
+6)		public static String Teams()
+7)		{
+8)	 return "{\r\n"
+9)	 		+ "  \"name\": \"Royal Challengers Bangalore\",\r\n"
+10)	 		+ "  \"location\": \"Bangalore\",\r\n"
+11)	 		+ "  \"player\": [\r\n"
+12)	 		+ "    {\r\n"
+13)	 		+ "      \"name\": \"Faf Du Plessis\",\r\n"
+14)	 		+ "      \"country\": \"South Africa\",\r\n"
+15)	 		+ "      \"role\": \"Batsman\",\r\n"
+16)	 		+ "      \"price-in-crores\": \"7\"\r\n"
+17)	 		+ "    },\r\n"
+18)	 		+ "    {\r\n"
+19)	 		+ "      \"name\": \"Virat Kohli\",\r\n"
+20)	 		+ "      \"country\": \"India\",\r\n"
+21)	 		+ "      \"role\": \"Batsman\",\r\n"
+22)	 		+ "      \"price-in-crores\": \"15\"\r\n"
+23)	 		+ "    },\r\n"
+24)	 		+ "    {\r\n"
+25)	 		+ "      \"name\": \"Glenn Maxwell\",\r\n"
+26)	 		+ "      \"country\": \"Australia\",\r\n"
+27)	 		+ "      \"role\": \"Batsman\",\r\n"
+28)	 		+ "      \"price-in-crores\": \"11\"\r\n"
+29)	 		+ "    },\r\n"
+30)	 		+ "    {\r\n"
+31)	 		+ "      \"name\": \"Mohammad Siraj\",\r\n"
+32)	 		+ "      \"country\": \"India\",\r\n"
+33)	 		+ "      \"role\": \"Bowler\",\r\n"
+34)	 		+ "      \"price-in-crores\": \"7\"\r\n"
+35)	 		+ "    },\r\n"
+36)	 		+ "    {\r\n"
+37)	 		+ "      \"name\": \"Harshal Patel\",\r\n"
+38)	 		+ "      \"country\": \"India\",\r\n"
+39)	 		+ "      \"role\": \"Bowler\",\r\n"
+40)	 		+ "      \"price-in-crores\": \"10.75\"\r\n"
+41)	 		+ "    },\r\n"
+42)	 		+ "    {\r\n"
+43)	 		+ "      \"name\": \"Wanindu Hasaranga\",\r\n"
+44)	 		+ "      \"country\": \"Srilanka\",\r\n"
+45)	 		+ "      \"role\": \"Bowler\",\r\n"
+46)	 		+ "      \"price-in-crores\": \"10.75\"\r\n"
+47)	 		+ "    },\r\n"
+48)	 		+ "    {\r\n"
+49)	 		+ "      \"name\": \"Dinesh Karthik\",\r\n"
+50)	 		+ "      \"country\": \"India\",\r\n"
+51)	 		+ "      \"role\": \"Wicket-keeper\",\r\n"
+52)	 		+ "      \"price-in-crores\": \"5.5\"\r\n"
+53)	 		+ "    },\r\n"
+54)	 		+ "    {\r\n"
+55)	 		+ "      \"name\": \"Shahbaz Ahmed\",\r\n"
+56)	 		+ "      \"country\": \"India\",\r\n"
+57)	 		+ "      \"role\": \"All-Rounder\",\r\n"
+58)	 		+ "      \"price-in-crores\": \"2.4\"\r\n"
+59)	 		+ "    },\r\n"
+60)	 		+ "    {\r\n"
+61)	 		+ "      \"name\": \"Rajat Patidar\",\r\n"
+62)	 		+ "      \"country\": \"India\",\r\n"
+63)	 		+ "      \"role\": \"Batsman\",\r\n"
+64)	 		+ "      \"price-in-crores\": \"0.20\"\r\n"
+65)	 		+ "    },\r\n"
+66)	 		+ "    {\r\n"
+67)	 		+ "      \"name\": \"Josh Hazlewood\",\r\n"
+68)	 		+ "      \"country\": \"Australia\",\r\n"
+69)	 		+ "      \"role\": \"Bowler\",\r\n"
+70)	 		+ "      \"price-in-crores\": \"7.75\"\r\n"
+71)	 		+ "    },\r\n"
+72)	 		+ "    {\r\n"
+73)	 		+ "      \"name\": \"Mahipal Lomror\",\r\n"
+74)	 		+ "      \"country\": \"India\",\r\n"
+75)	 		+ "      \"role\": \"Bowler\",\r\n"
+76)	 		+ "      \"price-in-crores\": \"7.75\"\r\n"
+77)	 		+ "    }\r\n"
+78)	 		+ "  ]\r\n"
+79)	 		+ "";
+80)	}
+81)	}
+
+
+package org;
+
+
+		// TODO Auto-generated method stub
+		import org.openqa.selenium.By.ByName;
+		import org.testng.Assert;
+
+		import Files.Payload1;
+		import io.restassured.path.json.JsonPath;
+//1) 4 foreign players
+		
+		public class players {
+
+			public static void main(String[] args) {
+				// TODO Auto-generated method stub
+				JsonPath jpath = new JsonPath(Payload1.Teams());
+				String name= jpath.get("country");
+				
+				System.out.println("name");
+				int roleCount=jpath.getInt("player.role");
+
+				for(int i=0; i<=roleCount; i++)
+				{
+				if(jpath.getString(player.role != "India")
+				{
+				int countFP=i;
+
+				Assert.assertEquals(countFP,4);
+				}
+				}
+
+	}
+//2nd question :atleast one wicket player
+			
+			JsonPath jpath = new JsonPath(Payload1.Teams());
+			int roleCount=jpath.getInt("player.role");{
+
+			for(int i=0; i<=roleCount; i++)
+			{
+			if(jpath.getString(player.role).EqualsIgnoreCase("Wicket-keeper")
+			{
+			System.out.println("Wicket-keeper found");
+			break;
+			}
+			}
+
+			Assert.assertEquals(roleCount,"WiketKeeper");
+
+			}
+		}
